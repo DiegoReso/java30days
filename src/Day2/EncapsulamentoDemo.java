@@ -16,6 +16,29 @@ public class EncapsulamentoDemo {
         }
         System.out.println("saldo continua intacto: " + conta.getSaldo());
 
-        conta.saldo = -999.0;   // nao compila
+        //caminho para sacar
+        try{
+            conta.sacar(-50.0);
+        }catch (IllegalArgumentException e) {
+            System.out.println("bloqueado: " + e.getMessage());
+        }
+        System.out.println("saldo continua  intacto: " + conta.getSaldo());
+
+        //caminho para sacar
+        try{
+            conta.sacar(0.0);
+        }catch (IllegalArgumentException e) {
+            System.out.println("bloqueado: " + e.getMessage());
+        }
+        System.out.println("saldo continua  intacto: " + conta.getSaldo());
+
+        //caminho para sacar
+        try{
+            conta.sacar(30.0);
+        }catch (IllegalArgumentException e) {
+            System.out.println("bloqueado: " + e.getMessage());
+        }
+        System.out.println("saldo atualizado, saque foi possivel: " + conta.getSaldo());
+        //conta.saldo = -999.0;   // nao compila
     }
 }

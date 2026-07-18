@@ -10,7 +10,7 @@ public class ClasseConta {
 //    nunca mais. exemplo:
 //    private final String titular;   // definido no construtor, nunca muda depois
 
-    public ClasseConta(double saldo, String titular) {
+    public ClasseConta(double saldo) {
         this.saldo = saldo;
     }
 
@@ -23,10 +23,16 @@ public class ClasseConta {
     }
 
     public void deposito(double valor) {
-        if(valor <= 0) {
+        if (valor <= 0) {
             throw new IllegalArgumentException("valor invalido");
         }
         this.saldo += valor;
     }
 
+    public void sacar(double valor) {
+        if (valor > this.saldo || valor <= 0) {
+            throw new IllegalArgumentException("valor invalido");
+        }
+        this.saldo -= valor;
+    }
 }
