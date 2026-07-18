@@ -5,7 +5,12 @@ public class ClasseConta {
     // É mais fácil abrir depois do que fechar (fechar algo que já é público pode quebrar quem dependia dele).
     private double saldo;
 
-    public ClasseConta(double saldo) {
+//    final num campo
+//    final torna o campo imutável depois de inicializado — você atribui uma vez (na declaração ou no construtor) e
+//    nunca mais. exemplo:
+//    private final String titular;   // definido no construtor, nunca muda depois
+
+    public ClasseConta(double saldo, String titular) {
         this.saldo = saldo;
     }
 
